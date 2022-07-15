@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700');
+
+:root{
+    --black:rgb(44, 40, 40);
+    --light-green:hsl(71, 73%, 54%);
+    --dark-green:hsl(179, 62%, 43%);
+    --gray:hsl(0, 0%, 59%);
+    --blue-gray:hsl(218, 22%, 67%);
+    --light-gray:#f8f9fa;
+}
+
+body{
+    background-color: var(--light-gray) !important;
+    font-family: 'Poppins',sans-serif !important;
+}
+
+.index-page{
+    min-height: 500px;
+}
+
+.search-form{
+    width: 80%;
+    height: 40px;
+    border: 1px solid rgba(0,0,0,.125);
+    padding-left:20px ;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.item-card img{
+    height: 250px;
+    object-fit: cover;
+}
+
+
+/* loading animation */
+@keyframes spinner {
+        0% {
+        transform: rotate(0deg);
+        }
+        100% {
+        transform: rotate(360deg);
+        }
+    }
+    .loading-spinner {
+        width: 50px;
+        height: 50px;
+        border: 10px solid #f3f3f3; /* Light grey */
+        border-top: 10px solid #383636; /* Black */
+        border-radius: 50%;
+        animation: spinner 1.5s linear infinite;
+        position:absolute;
+        top:50%;
+        left: calc(50% - 25px);
+        transform: translate(-50% , -50%);
+    }
+
+@media (min-width:767px){
+    .search-form{
+        width: 30%;
+    }
+}

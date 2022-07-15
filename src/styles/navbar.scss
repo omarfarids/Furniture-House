@@ -1,0 +1,80 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ul,ol,dl{
+    margin:0
+}
+a{
+    text-decoration: none;
+    color: unset;
+}
+nav{
+    box-shadow: 2px 4px 8px 0 rgba(0,0,0,0.2);
+    padding: 0 5px;
+    overflow: hidden;
+}
+.nav-links,.links ul,.links{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+ul li{
+    list-style: none;
+    padding: 10px;
+    cursor: pointer;
+}
+ul li:hover{
+    background-color: rgba(0,0,0,0.2);
+}
+.sidebar-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: unset;
+    border: unset;
+    cursor: pointer;
+    border: 1px solid rgb(0,0,0);
+    border-radius: 5px;
+    margin: 4px;
+    padding: 4px;
+    width:30px;
+    height: 30px;
+}
+.sidebar-button img{
+    filter: invert(1);
+    width: 90%;
+    transition: all .5s;
+}
+.small-screen{
+    width: 100%;
+    display: block;
+}
+// the height is depending on number of links 
+.small-screen ul{
+    height: 9.5rem;
+    transition: all 0.5s;
+}
+.hidden ul{
+    height: 0px;
+}
+
+.rotate{
+    transform: rotate(-90deg);
+}
+.sidebar-button,.small-screen{
+    transition: all .5s;
+}
+ul.big-screen{
+    display: none;
+}
+@media (min-width:767px) {
+    .small-screen,.sidebar-button{
+        display: none;
+    }
+    ul.big-screen{
+        display: flex;
+    }
+}

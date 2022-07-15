@@ -1,0 +1,55 @@
+.purchaseForm{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    gap: 1rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    background-color: #fff;
+    padding: 2rem 1rem;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border: 1px solid rgba(0,0,0,.125);
+}
+
+@media (min-width:767px){
+    .purchaseForm{
+    width: 400px;
+    }
+}
+
+.purchaseForm input{
+    padding: .5rem 1rem;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: 20px;
+}
+
+.success{
+    padding-top: 15px;
+    background-color: var(--dark-green);
+    text-align: center;
+    width: 15rem;
+    border-radius: 1rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: #fff;
+    box-shadow: 0 0 40px 10px rgba(0,0,0,0.2);
+    animation: success 1.5s ease-out forwards;
+}
+
+@keyframes success {
+    0% {
+        opacity: 1;
+    }
+    75% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
