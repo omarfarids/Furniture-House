@@ -7,7 +7,6 @@ import Purchase from './Purchase';
 function CartItem() {
     const {cartItems,setCartItems,remove,total,setTotal,setPurchase} = useContext(AppContext);
     
-    console.log(cartItems)
   return (
     <>
       {cartItems.length === 0 && <p className='text-center mt-5 pt-5'>There is no item in your cart</p>}
@@ -23,13 +22,12 @@ function CartItem() {
                     </div>
           })}
       </div>
-      {console.log(total)}
       <Purchase />
       <div className={cartStyles.buttonGroup}>
-        <button className='btn btn-outline-primary' onClick={()=>setPurchase({
+        {cartItems.length !== 0 && <button className='btn btn-outline-primary' onClick={()=>setPurchase({
           order:true,
           submit:false
-        })} >Order Now</button>
+        })} >Order Now</button>}
         <button className='btn btn-danger' onClick={()=>{setCartItems([]);setTotal(0)}}>Clear cart</button>
       </div>
     </>

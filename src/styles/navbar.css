@@ -15,6 +15,10 @@ nav ul{
     padding-left:0;
   }
 
+nav a{
+  display: block;
+}
+
 nav {
   box-shadow: 2px 4px 8px 0 rgba(0, 0, 0, 0.2);
   padding: 0 1rem;
@@ -34,7 +38,7 @@ ul li {
   padding: 10px;
   cursor: pointer; }
 
-ul li:hover {
+nav ul li:hover {
   background-color: var(--dark-green); }
 
 .sidebar-button {

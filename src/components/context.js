@@ -36,7 +36,6 @@ const AppProvider = ({children}) =>{
 
 
 
-
     useEffect(()=>{
         fetchAPI()
     },[searchForm])
@@ -62,7 +61,7 @@ const AppProvider = ({children}) =>{
                                         purchase,
                                         setPurchase,
                                         orderInfo,
-                                        setOrderInfo
+                                        setOrderInfo,
                                         }}>
         {children}
     </AppContext.Provider>

@@ -8,8 +8,10 @@ import styles from '../styles/Goods.module.css';
 
 
 function Goods() {
-  const {loading , data , setSingleItem,searchForm,cartItems,setCartItems,total,setTotal} = useContext(AppContext)
+  const {loading , data , setSingleItem,searchForm,cartItems,setCartItems,total,setTotal,setPurchase} = useContext(AppContext)
 
+  let searchResults = data.filter(item=>{
+    return item.name.toLowerCase().match(searchForm.toLowerCase())})
 
   if(loading){
     return <Loading />
@@ -52,14 +54,16 @@ function Goods() {
                     colors,
                     category
                   })}><Link to={`/Item/${name}`} >Details</Link></Button>
-                  <Button variant="primary" onClick={()=>{setCartItems([...cartItems,{img,id,item:name,price}]);setTotal(total + (price / 100))}}>Buy now</Button>
+                  <Button className={styles.buyButton} variant="primary" onClick={()=>{setCartItems([...cartItems,{img,id,item:name,price}]);setTotal(total + (price / 100));setPurchase({
+                        order:false,
+                        submit:false,
+                    })}}>Buy now</Button>
                 </ButtonToolbar>
               </Card.Body>
               </Card>
             </div>
           )
-        }):data.filter(item=>{
-          return item.name.toLowerCase().match(searchForm.toLowerCase())}).map(element=>{
+        }):searchResults.map(element=>{
             const{
               name,
               company,
@@ -71,6 +75,7 @@ function Goods() {
               category
             } = element;
             return (
+              <>
               <Card className={`${styles.cardItem} item-card m-5`} key={id} style={{ width: '18rem' }}>
               <Card.Img variant="top" src={img} alt={name} />
               <Card.Body>
@@ -93,12 +98,17 @@ function Goods() {
                     colors,
                     category
                   })}><Link to={`/Item/${name}`} >Details</Link></Button>
-                  <Button variant="primary" onClick={()=>{setCartItems([...cartItems,{img,id,item:name,price}]);setTotal(total + (price / 100))}}>Buy now</Button>
+                  <Button className={styles.buyButton} variant="primary" onClick={()=>{setCartItems([...cartItems,{img,id,item:name,price}]);setTotal(total + (price / 100));setPurchase({
+                        order:false,
+                        submit:false,
+                    })}}>Buy now</Button>
                 </ButtonToolbar>
               </Card.Body>
-              </Card>)
+              </Card>
+              </>)
           })
       }
+      {searchResults.length === 0 && <p>Sorry , This Item Is Not Available!</p>}
     </div>
   )
 }
