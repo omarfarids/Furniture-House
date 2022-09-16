@@ -8,6 +8,7 @@ import {BrowserRouter as Router , Routes , Route} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/global.css'
 import Footer from './components/Footer';
+import Header from './components/Header';
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         <Routes>
           <Route exact path='/' element={
             <div>
+              <Header />
               <Index />
             </div>
           } />

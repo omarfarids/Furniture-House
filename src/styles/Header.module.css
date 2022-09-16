@@ -1,0 +1,19 @@
+.header{
+    width: 100%;
+    height: 92vh;
+    background-position: 100% 30%;
+    background: url('../assets/small-screen-header.jpg');
+    background-size: cover;
+    text-align: center;
+    padding: 12rem 2rem 0;
+}
+
+@media (min-width:767px){
+    .header{
+        padding: 7rem 20rem 0;
+        background: url('../assets/large-screen-header.jpg');
+        background-position: 100% 30%;
+        background-size: cover;
+        text-align: center;
+    }
+}
